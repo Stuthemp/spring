@@ -10,6 +10,7 @@ import tacos.repository.IngredientRepository;
 import tacos.model.Ingredient.Type;
 
 @SpringBootApplication
+
 public class TacoCloudApplication {
 
 	public static void main(String[] args) {

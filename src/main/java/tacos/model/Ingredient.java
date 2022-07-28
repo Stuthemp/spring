@@ -1,22 +1,20 @@
 package tacos.model;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import lombok.NoArgsConstructor;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
-import org.springframework.data.cassandra.core.mapping.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * todo Document type Ingredients
  */
 @Data
 @AllArgsConstructor
-@Table("ingredients")
+@Document
 public class Ingredient {
 
-    @PrimaryKey
+    @Id
     private final String id;
     private final String name;
     private final Type type;
