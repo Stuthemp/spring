@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 @Data
 @Entity
-public class TacoOrder {
+public class TacoOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -39,6 +40,9 @@ public class TacoOrder {
     private String ccCVV;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
+
+    @ManyToOne
+    private TacoAppUser user;
 
     public void addTaco(Taco taco) {
         this.tacos.add(taco);

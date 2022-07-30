@@ -9,6 +9,7 @@ import tacos.repository.IngredientRepository;
 
 import tacos.model.Ingredient.Type;
 
+
 @SpringBootApplication
 public class TacoCloudApplication {
 
@@ -31,5 +32,4 @@ public class TacoCloudApplication {
 			repository.save(new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
 		};
 	}
-
 }
